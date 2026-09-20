@@ -54,7 +54,7 @@ export default function FeaturedSlider() {
     <>
       <div className="relative overflow-hidden w-full h-full rounded-sm group">
         {/* Slider Box Frame Wrapper */}
-        <div className="relative w-full h-[500px] md:h-[650px] lg:h-[550px] transition-all duration-300">
+        <div className="relative w-full h-[250px] md:h-[650px] lg:h-[550px] transition-all duration-300">
           <AnimatePresence
             initial={false}
             custom={direction}
@@ -138,9 +138,7 @@ export default function FeaturedSlider() {
         >
           {/* Label index counter part */}
           <p className="text-[11px] sm:text-[12px] uppercase tracking-[0.25em] font-bold text-zinc-800">
-            {stepNumber} —{" "}
-            {slide.label ||
-              `RESIDENCE NO. ${stepNumber}`}
+            {stepNumber} — RESIDENCE
           </p>
 
           {/* Main big headline quotation styling */}
@@ -165,7 +163,7 @@ export default function FeaturedSlider() {
             href="#projects"
             className="text-[12px] font-bold tracking-widest uppercase border-b border-[#1a1a1a] pb-0.5 hover:text-zinc-500 hover:border-zinc-400 transition-all duration-300 mt-5 block"
           >
-            View Project →
+            Contact Us →
           </a>
         </motion.div>
       </AnimatePresence>

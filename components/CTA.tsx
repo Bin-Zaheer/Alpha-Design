@@ -20,7 +20,9 @@ export default function CTA() {
         className="relative overflow-hidden rounded-2xl"
       >
         <Image
-          src="/footer.jpeg"
+          width={1920} // Apni image ke aspect ratio ke hisaab se width set karein
+          height={384}
+          src="/foot.jpeg"
           alt="Living room"
           className="h-96 w-full object-cover"
         />
@@ -35,8 +37,8 @@ export default function CTA() {
             }}
             className="font-serif text-3xl italic sm:text-4xl"
           >
-            &ldquo;Let&apos;s Create Something
-            Timeless.&rdquo;
+            &ldquo;Small Footprint. Grand
+            Vision&rdquo;
           </motion.h2>
           <motion.p
             initial={{ opacity: 0 }}
@@ -48,7 +50,9 @@ export default function CTA() {
             }}
             className="mt-3 text-sm text-cream/85"
           >
-            Have a space in mind? Let&apos;s talk.
+            Don’t let square footage limit your
+            lifestyle. We turn compact spaces into
+            expansive sanctuaries.
           </motion.p>
           <motion.a
             href="mailto:hello@alphadesign.com"

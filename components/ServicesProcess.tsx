@@ -66,6 +66,8 @@ export default function ServicesProcess() {
           >
             <div className="overflow-hidden rounded-sm w-full aspect-[4/5] sm:aspect-[1.1/1] md:aspect-[4/5] bg-zinc-100 shadow-sm max-w-[540px]">
               <Image
+                width={1920}
+                height={1080}
                 src="/foo.jpeg"
                 alt="Minimal bathroom layout concept"
                 className="h-full w-full object-cover"
@@ -211,7 +213,7 @@ export default function ServicesProcess() {
                     {/* ========================================================================= */}
                     {/* Step Index Heading Title */}
                     <div className="flex items-center gap-2 mt-2">
-                      <span className="text-[14px] md:text-[18px] font-serif font-bold text-[#1a1a1a] tracking-tight">
+                      <span className="text-[14px] md:text-[26px] font-serif font-bold text-[#1a1a1a] tracking-tight">
                         {p.step}
                       </span>
                       <span className="text-zinc-400 text-xs font-light">

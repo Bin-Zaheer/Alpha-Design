@@ -13,7 +13,7 @@ const links = [
   { label: "About", href: "#about" },
   { label: "Projects", href: "#projects" },
   { label: "Services", href: "#services" },
-  { label: "Process", href: "#process" },
+  { label: "Faq's", href: "#process" },
   { label: "Contact", href: "#contact" },
 ];
 
@@ -102,13 +102,13 @@ export default function Navbar() {
           }}
           whileHover={{ scale: 1.04 }}
           whileTap={{ scale: 0.97 }}
-          className={`hidden bg-transparent border-2 px-6 py-2.5 text-sm md:inline-block transition-all duration-500 ease-in-out ${
+          className={`hidden bg-transparent border-2 px-9 py-2.5 text-sm md:inline-block transition-all duration-500 ease-in-out ${
             scrolled
               ? "border-charcoal text-charcoal"
               : "border-white text-cream"
           }`}
         >
-          Start a Project
+          Let's Talk
         </motion.a>
 
         {/* Mobile Hamburger menu toggle actions */}
@@ -160,7 +160,7 @@ export default function Navbar() {
               onClick={() => setOpen(false)}
               className="mt-2 rounded-full bg-charcoal px-6 py-2.5 text-center text-sm text-cream transition-transform duration-300 active:scale-95 block"
             >
-              Start a Project
+              Let's Talk
             </a>
           </motion.nav>
         )}

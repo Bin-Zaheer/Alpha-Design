@@ -1,7 +1,11 @@
 "use client";
 
-import { motion } from "framer-motion"; // 'motion/react' ko generic safe package se handle kiya
-import { projects } from "@/lib/data";
+import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
+import {
+  projects,
+  testimonials,
+} from "@/lib/data";
 import Image from "next/image";
 
 const fadeUp = {
@@ -17,14 +21,46 @@ const fadeUp = {
 };
 
 export default function Intro() {
+  const [
+    currentTestimonial,
+    setCurrentTestimonial,
+  ] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentTestimonial((prev) =>
+        prev === testimonials.length - 1
+          ? 0
+          : prev + 1,
+      );
+    }, 4000);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  const nextTestimonial = () => {
+    setCurrentTestimonial((prev) =>
+      prev === testimonials.length - 1
+        ? 0
+        : prev + 1,
+    );
+  };
+
+  const prevTestimonial = () => {
+    setCurrentTestimonial((prev) =>
+      prev === 0
+        ? testimonials.length - 1
+        : prev - 1,
+    );
+  };
+
   return (
-    /* Reference pic ke mutabik background color [#fbf9f4] (soft off-white cream) aur extra tracking sets update kiye hain */
     <section
       id="about"
       className="w-full bg-[#fbf9f4] text-[#1a1a1a] mx-auto px-6 py-24 md:px-16 lg:px-24 rounded-xl"
     >
       <div className="max-w-7xl mx-auto grid gap-12 md:grid-cols-[1.2fr_0.8fr] items-start justify-between">
-        {/* 🟢 LEFT SIDE: Text Section (Reference Image Alignment) */}
+        {/* LEFT SIDE: Text Section */}
         <motion.div
           initial="hidden"
           whileInView="show"
@@ -32,37 +68,28 @@ export default function Intro() {
           variants={fadeUp}
           className="flex flex-col justify-center max-w-[690px] md:text-start text-left"
         >
-          {/* Main Serif Big Headline (Exact same text breaking styling) */}
-          <h2 className="font-serif lg:text-6xl text-4xl font-bold leading-[1.1]  tracking-tight text-[#1a1a1a]">
-            We design spaces with character,
-            balance and intention.
+          <p className="text-[#1a1a1a] pb-5 text-lg border-1 border-[#1a1a1a] pt-10">
+            Who We Are
+          </p>
+
+          <h2 className="font-serif lg:text-6xl text-4xl font-bold leading-[1.1] pb-3 tracking-tight text-[#1a1a1a]">
+            Where imagination meets reality
           </h2>
 
-          {/* Detailed Paragraph Text */}
-          <p className="text-[12px] sm:text-[18px] leading-[1.6] text-zinc-700 font-semibold mt-10 max-w-[660px]">
-            <span className="font-bold text-[#1a1a1a] tracking-wide">
-              ALPHA DESIGN
-            </span>{" "}
-            is an interior design studio dedicated
-            to creating timeless residential and
-            commercial spaces that seamlessly
-            blend aesthetics and functionality.
-            Our approach is rooted in a deep
-            understanding of your lifestyle,
-            focusing on natural materials, refined
-            details, and a sense of enduring
-            quality.
-          </p>
-          <p className="text-[12px] sm:text-[18px] leading-[1.6] text-zinc-700 font-semibold mt-5 max-w-[660px]">
-            ALPHA DESIGN is an interior design
-            studio dedicated to creating timeless
-            residential and commercial spaces that
-            seamlessly blend aesthetics and
-            functionality.
+          <p className="text-[12px] sm:text-[18px] leading-[1.6] text-zinc-700 font-semibold mt-10 max-w-[630px]">
+            We are a collective of visual
+            architects and strategic thinkers. At
+            Alpha Design, we don’t just follow
+            trends; we set the pace. Founded on
+            the principle that great design is the
+            bridge between a vision and its
+            audience, we specialize in creating
+            bold, functional aesthetics that
+            demand attention.
           </p>
         </motion.div>
 
-        {/* 🔵 RIGHT SIDE: Single Image Grid (Jo pehle do cards mien broken tha, ab single clear frame hai image ki tarah) */}
+        {/* RIGHT SIDE: Single Image */}
         <motion.div
           initial="hidden"
           whileInView="show"
@@ -71,7 +98,6 @@ export default function Intro() {
           transition={{ delay: 0.15 }}
           className="w-full flex justify-end md:justify-end justify-center"
         >
-          {/* Image Aspect ratio reference pic ke rectangular vertical cuts se map kiya */}
           <div className="overflow-hidden rounded-sm w-full md:max-w-[420px] aspect-[3/4] shadow-sm">
             <motion.img
               whileHover={{ scale: 1.04 }}
@@ -79,7 +105,7 @@ export default function Intro() {
                 duration: 0.6,
                 ease: "easeOut",
               }}
-              src="/project1.jpeg" // Aapki stairs architectural image path
+              src="/new7.jpeg"
               alt="Entrance and staircase details"
               className="h-[500px] w-full object-cover"
             />
@@ -87,12 +113,12 @@ export default function Intro() {
         </motion.div>
       </div>
 
-      {/* --- Rest of your Sections: Projects Grid Section --- */}
+      {/* --- Projects Grid Section --- */}
       <div
         id="projects"
         className="mt-24 max-w-7xl mx-auto px-1"
       >
-        {/* --- LINE 1: Top 2 Big Images (Desktop par 2 columns, Mobile par default stack ya grids) --- */}
+        {/* LINE 1: Top 2 Big Images */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 md:gap-10 mb-8 md:mb-12">
           {projects.slice(0, 2).map((p, i) => (
             <motion.figure
@@ -109,7 +135,6 @@ export default function Intro() {
               }}
               className="group overflow-hidden"
             >
-              {/* Reference pic ke mutabik top large content boxes aspect ratio [1/1] (Square) ya [4/3] rectangle set kiya */}
               <div className="overflow-hidden aspect-square bg-zinc-100 rounded-sm">
                 <motion.img
                   whileHover={{ scale: 1.04 }}
@@ -122,14 +147,15 @@ export default function Intro() {
                   className="h-full w-full object-cover"
                 />
               </div>
-              <figcaption className="mt-4 text-[15px] md:text-[18px] font-serif text-[#1a1a1a] tracking-normal font-bold">
+
+              <figcaption className="mt-4 text-[15px] md:text-[18px]  text-[#1a1a1a] tracking-normal font-medium">
                 {p.title}
               </figcaption>
             </motion.figure>
           ))}
         </div>
 
-        {/* --- LINE 2: Bottom 3 Smaller Images (Desktop par 3 columns, Tablet pe 3, Small mobile par 1 ya 2 columns auto grid) --- */}
+        {/* LINE 2: Bottom 3 Smaller Images */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 md:gap-8">
           {projects.slice(2, 5).map((p, i) => (
             <motion.figure
@@ -146,7 +172,6 @@ export default function Intro() {
               }}
               className="group overflow-hidden"
             >
-              {/* Niche wale 3 grids ke aspect ratios ko image ke exact vertically matching dimensions [4/5] frame par clamp kiya */}
               <div className="overflow-hidden aspect-[4/5] bg-zinc-100 rounded-sm">
                 <motion.img
                   whileHover={{ scale: 1.04 }}
@@ -159,7 +184,8 @@ export default function Intro() {
                   className="h-full w-full object-cover"
                 />
               </div>
-              <figcaption className="mt-3 text-[14px] md:text-[16px] font-serif text-[#1a1a1a] tracking-normal font-bold">
+
+              <figcaption className="mt-3 text-[14px] md:text-[18px]  text-[#1a1a1a] tracking-normal font-medium">
                 {p.title}
               </figcaption>
             </motion.figure>
@@ -167,8 +193,9 @@ export default function Intro() {
         </div>
       </div>
 
-      {/* --- Blockquote Editorial Banner Section --- */}
-      <motion.blockquote
+      {/* --- Testimonials Slider Section --- */}
+      <motion.section
+        id="testimonials"
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.3 }}
@@ -176,40 +203,94 @@ export default function Intro() {
           duration: 0.8,
           ease: "easeOut",
         }}
-        /* Reference image ke mutabik top border, custom padding, aur balanced grid alignment adjust ki hai */
-        className="mt-28 grid gap-12 md:gap-16 border-t border-zinc-200/60 pt-20 md:grid-cols-[1fr_1fr] max-w-7xl mx-auto px-1 items-center"
+        className="mt-28 border-t border-zinc-200/60 pt-20 max-w-7xl mx-auto px-1"
       >
-        {/* 🟢 LEFT SIDE: Vertical Minimal Image Block */}
-        <div className="overflow-hidden rounded-sm w-full aspect-[4/5] sm:aspect-[1.1/1] md:aspect-[4/5] bg-zinc-100 shadow-sm max-w-[540px]">
-          <Image
-            src="/mini.jpeg"
-            alt="Minimal bathroom layout concept"
-            className="h-full w-full object-cover"
-          />
-        </div>
+        <div className="grid gap-12 md:gap-16 md:grid-cols-[1fr_1fr] items-center">
+          {/* LEFT SIDE: Testimonial Image */}
+          <div className="overflow-hidden rounded-sm w-full aspect-[4/5] sm:aspect-[1.1/1] md:aspect-[4/5] bg-zinc-100 shadow-sm max-w-[540px]">
+            <motion.img
+              src={"/new7.jpeg"}
+              className="h-full w-full object-cover"
+            />
+          </div>
 
-        {/* 🔵 RIGHT SIDE: Text Content Box (Perfect alignment with reference pic) */}
-        <div className="flex flex-col justify-center max-w-[580px] md:text-start text-left">
-          {/* Large Serif Blockquote Headline (Bina extra quotes character scaling ke, bold elegant style) */}
-          <h3 className="font-serif text-4xl sm:text-4xl md:text-[60px] text-[#1a1a1a] font-bold leading-[1.15] md:leading-[1.15]">
-            “Less, but never ordinary.”
-          </h3>
+          {/* RIGHT SIDE: Testimonial Content */}
+          <div className="flex flex-col justify-center max-w-[580px] md:text-start text-left">
+            <h2 className="font-serif lg:text-6xl text-4xl font-bold leading-[1.1] pb-10 tracking-tight text-[#1a1a1a] ">
+              What Our Clients Say
+            </h2>
 
-          {/* Detailed Brand Paragraph Text */}
-          <p className="mt-6 text-[14px] sm:text-[18px] leading-[1.65] text-zinc-700  font-bold">
-            At{" "}
-            <span className="font-bold text-[#1a1a1a]  tracking-wide">
-              ALPHA DESIGN
-            </span>
-            , we believe in design that embraces
-            simplicity and purpose. We focus on
-            clean lines, honest materials, and
-            thoughtful compositions, creating
-            spaces that are refined, serene, and
-            ultimately, timeless.
-          </p>
+            <motion.h3
+              key={
+                testimonials[currentTestimonial]
+                  .text
+              }
+              initial={{ opacity: 0, y: 15 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              className=" text-xl sm:text-xl  text-zinc-700 font-normal leading-[1.15]"
+            >
+              “
+              {
+                testimonials[currentTestimonial]
+                  .text
+              }
+              ”
+            </motion.h3>
+
+            {/* Client Name + Title */}
+            <motion.div
+              key={
+                testimonials[currentTestimonial]
+                  .role
+              }
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{
+                duration: 0.5,
+                delay: 0.1,
+              }}
+              className="mt-8"
+            >
+              <p className="text-[16px] font-bold text-[#1a1a1a] uppercase">
+                {
+                  testimonials[currentTestimonial]
+                    .author
+                }
+              </p>
+            </motion.div>
+
+            {/* Slider Controls */}
+            <div className="flex items-center gap-4 mt-10">
+              <button
+                onClick={prevTestimonial}
+                className="w-11 h-11 rounded-full border border-zinc-300 flex items-center justify-center text-lg transition-all duration-300 hover:bg-[#1a1a1a] hover:text-white hover:border-[#1a1a1a]"
+                aria-label="Previous testimonial"
+              >
+                ←
+              </button>
+
+              <button
+                onClick={nextTestimonial}
+                className="w-11 h-11 rounded-full border border-zinc-300 flex items-center justify-center text-lg transition-all duration-300 hover:bg-[#1a1a1a] hover:text-white hover:border-[#1a1a1a]"
+                aria-label="Next testimonial"
+              >
+                →
+              </button>
+
+              <span className="ml-2 text-sm text-zinc-500 tracking-wider">
+                {String(
+                  currentTestimonial + 1,
+                ).padStart(2, "0")}{" "}
+                /{" "}
+                {String(
+                  testimonials.length,
+                ).padStart(2, "0")}
+              </span>
+            </div>
+          </div>
         </div>
-      </motion.blockquote>
+      </motion.section>
     </section>
   );
 }

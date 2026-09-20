@@ -5,54 +5,51 @@ import { GiHouseKeys } from "react-icons/gi";
 
 export const projects = [
   {
-    title: "The Ivory Residence",
-    image: "/intro/pro1.jpeg",
+    title: "Myra (Condo)",
+    image: "/new1.jpeg",
   },
   {
-    title: "Noir House",
-    image: "/intro/pro2.jpeg",
+    title: "422B Northshore Drive (BTO 5-room)",
+    image: "/new2.jpeg",
   },
   {
-    title: "The Stone Villa",
-    image: "/intro/pro3.jpeg",
+    title: "403B Lor 1 Toa Payoh (BTO 4-room)",
+    image: "/new3.jpeg",
   },
   {
-    title: "Urban Retreat",
-    image: "/intro/pro4.jpeg",
+    title: "323A Tengah Drive (BTO 2-room)",
+    image: "/new4.jpeg",
   },
   {
-    title: "Contemporary Living",
-    image: "/intro/pro5.jpeg",
+    title: "166 Tampines St 12 (Resale 4-room)",
+    image: "/new5.jpeg",
   },
 ];
 
 export const featuredSlides = [
   {
-    label: "01 — RESIDENCE NO. 01",
-    title: "Modern Elegance",
+    label: "01 — RESIDENCE",
+    title: "Kitchen that suit your needs",
     location: "Karachi / Pakistan",
     type: "Residential Interior",
     year: "2026",
-    image:
-      "https://images.unsplash.com/photo-1600210492493-0946911123ea?w=1200&q=80",
+    image: "/slider.jpg",
   },
   {
-    label: "02 — RESIDENCE NO. 02",
-    title: "Quiet Luxury",
+    label: "02 — RESIDENCE",
+    title: "Living room that match your style",
     location: "Lahore / Pakistan",
     type: "Residential Interior",
     year: "2026",
-    image:
-      "https://images.unsplash.com/photo-1600585152220-90363fe7e115?w=1200&q=80",
+    image: "/slide.jpeg",
   },
   {
-    label: "03 — RESIDENCE NO. 03",
-    title: "Warm Minimal",
+    label: "03 — RESIDENCE",
+    title: "Spaces that Blend In",
     location: "Islamabad / Pakistan",
     type: "Residential Interior",
     year: "2026",
-    image:
-      "https://images.unsplash.com/photo-1600210491892-03d54c0aaf87?w=1200&q=80",
+    image: "/new6.jpeg",
   },
 ];
 
@@ -92,5 +89,28 @@ export const process: ProcessStep[] = [
     step: <GiHouseKeys />,
     title: "Exception Value",
     text: "Luxury should be accessible through clear pricing and smart design, delivering finishes without inflated markups.",
+  },
+];
+
+export const testimonials = [
+  {
+    text: "We were worried about our BTO renovation timeline, but the team’s Timely Execution was impressive. They handled all the HDB permits seamlessly and handed over the keys a week earlier than expected. The final result looks exactly like the 3D renders—true Quality Craftsmanship that we are proud to show off to our friends and family!",
+    author: "Jasmine & Wei Lun",
+    role: "Homeowner, New York",
+  },
+  {
+    text: "Renovating an old resale flat felt daunting until we met this team. They provided Exceptional Value by suggesting cost-effective ways to achieve the luxury look we wanted without blowing our budget. Their eye for Timeless Design turned our dark, cramped kitchen into a bright, functional space that we know will stay stylish for years.",
+    author: "Mrs. Tan",
+    role: "Architectural Enthusiast",
+  },
+  {
+    text: "Our home renovation felt overwhelming until we met the Alpha team. They listened to how our family actually lives—not just how we wanted the house to look. During the hacking and tiling phases, we were constantly updated with photos and progress reports, which took away all the stress. It’s rare to find a firm that balances high-end design with such honest, down-to-earth project management. We finally feel like we have room to breathe.",
+    author: "Sarah & David Lim",
+    role: "Studio Founder",
+  },
+  {
+    text: "We engaged Alpha Design & Consultancy for BTO, and the experience was exceptional. We were worried about the hacking regulations and safety concerns. The team didn't just design a beautiful workspace; they handled the entire 'Consultancy' side with total transparency. They found space we didn't know we had and managed the electrical and plumbing works so precisely that we had zero downtime.",
+    author: "Marcus Tan",
+    role: "Studio Founder",
   },
 ];

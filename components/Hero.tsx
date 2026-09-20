@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "motion/react";
-import banner from "../public/banner.jpeg";
+import banner from "../public/new6.jpeg";
 import Image from "next/image";
 
 export default function Hero() {
