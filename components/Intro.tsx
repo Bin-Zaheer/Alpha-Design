@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion"; // 'motion/react' ko generic safe package se handle kiya
 import { projects } from "@/lib/data";
+import Image from "next/image";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -180,7 +181,7 @@ export default function Intro() {
       >
         {/* 🟢 LEFT SIDE: Vertical Minimal Image Block */}
         <div className="overflow-hidden rounded-sm w-full aspect-[4/5] sm:aspect-[1.1/1] md:aspect-[4/5] bg-zinc-100 shadow-sm max-w-[540px]">
-          <img
+          <Image
             src="/mini.jpeg"
             alt="Minimal bathroom layout concept"
             className="h-full w-full object-cover"

@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "motion/react";
+import Image from "next/image";
 
 export default function CTA() {
   return (
@@ -18,7 +19,7 @@ export default function CTA() {
         }}
         className="relative overflow-hidden rounded-2xl"
       >
-        <img
+        <Image
           src="/footer.jpeg"
           alt="Living room"
           className="h-96 w-full object-cover"

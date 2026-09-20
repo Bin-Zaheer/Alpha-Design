@@ -65,7 +65,7 @@ export default function ServicesProcess() {
             className="w-full overflow-hidden rounded-sm aspect-[4/5] bg-zinc-100 shadow-sm max-w-[460px] mx-auto md:mx-0"
           >
             <div className="overflow-hidden rounded-sm w-full aspect-[4/5] sm:aspect-[1.1/1] md:aspect-[4/5] bg-zinc-100 shadow-sm max-w-[540px]">
-              <img
+              <Image
                 src="/foo.jpeg"
                 alt="Minimal bathroom layout concept"
                 className="h-full w-full object-cover"
