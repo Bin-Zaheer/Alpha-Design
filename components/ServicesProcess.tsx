@@ -37,7 +37,7 @@ export default function ServicesProcess() {
     /* Full layout background color matching reference picture exactly with proper breathing page padding */
     <section
       id="services"
-      className="w-full bg-[#fbf9f4] text-[#1a1a1a] py-16 px-6 sm:px-12 md:px-16 lg:px-24 rounded-xl"
+      className="w-full bg-[#fbf9f4] text-[#1a1a1a] py-16 px-6 sm:px-12 md:px-16 lg:px-24 lg:rounded-xl"
     >
       <div className="max-w-[1200px] mx-auto">
         {/* ========================================================================= */}

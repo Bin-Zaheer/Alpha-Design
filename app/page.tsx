@@ -12,10 +12,10 @@ export default function Home() {
     <>
       <Navbar />
       <Hero />
-      <main className="bg-cream px-10 mt-10 ">
+      <main className="bg-cream lg:px-10 mt-10 ">
         <Intro />
       </main>
-      <main className="bg-cream px-10 mt-10 ">
+      <main className="bg-cream lg:px-10 lg:mt-10 ">
         <ServicesProcess />
       </main>
       <main className="bg-cream mt-10 ">

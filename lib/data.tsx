@@ -49,7 +49,7 @@ export const featuredSlides = [
     location: "Islamabad / Pakistan",
     type: "Residential Interior",
     year: "2026",
-    image: "/new6.jpeg",
+    image: "/new6.webp",
   },
 ];
 

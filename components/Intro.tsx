@@ -57,7 +57,7 @@ export default function Intro() {
   return (
     <section
       id="about"
-      className="w-full bg-[#fbf9f4] text-[#1a1a1a] mx-auto px-6 py-24 md:px-16 lg:px-24 rounded-xl"
+      className="w-full bg-[#fbf9f4] text-[#1a1a1a] mx-auto px-6 py-24 md:px-16 lg:px-24 lg:rounded-xl"
     >
       <div className="max-w-7xl mx-auto grid gap-12 md:grid-cols-[1.2fr_0.8fr] items-start justify-between">
         {/* LEFT SIDE: Text Section */}
@@ -68,7 +68,7 @@ export default function Intro() {
           variants={fadeUp}
           className="flex flex-col justify-center max-w-[690px] md:text-start text-left"
         >
-          <p className="text-[#1a1a1a] pb-5 text-lg border-1 border-[#1a1a1a] pt-10">
+          <p className="text-[#1a1a1a] pb-5 text-lg border-1 border-[#1a1a1a] lg:pt-10 -mt-10 lg:-mt-0">
             Who We Are
           </p>
 
@@ -228,7 +228,7 @@ export default function Intro() {
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className=" text-xl sm:text-xl  text-zinc-700 font-normal leading-[1.15]"
+              className=" text-lg sm:text-xl  text-zinc-700 font-light leading-[1.15]"
             >
               “
               {
