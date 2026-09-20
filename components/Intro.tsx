@@ -72,11 +72,11 @@ export default function Intro() {
             Who We Are
           </p>
 
-          <h2 className="font-serif lg:text-6xl text-4xl font-bold leading-[1.1] pb-3 tracking-tight text-[#1a1a1a]">
+          <h2 className="font-serif lg:text-6xl text-4xl font-bold leading-[1.1] lg:pb-3 tracking-tight text-[#1a1a1a]">
             Where imagination meets reality
           </h2>
 
-          <p className="text-[12px] sm:text-[18px] leading-[1.6] text-zinc-700 font-semibold mt-10 max-w-[630px]">
+          <p className="text-lg sm:text-[18px] leading-[1.6] text-zinc-700 font-semibold mt-10 max-w-[630px]">
             We are a collective of visual
             architects and strategic thinkers. At
             Alpha Design, we don’t just follow
