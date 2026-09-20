@@ -1,5 +1,10 @@
 import type { Metadata } from "next";
-import { Playfair_Display, Inter } from "next/font/google";
+import {
+  Playfair_Display,
+  Inter,
+} from "next/font/google";
+// The CSS file is processed by Next.js, but it has no TypeScript module declaration.
+// @ts-ignore -- intentional side-effect import handled by the Next.js bundler.
 import "./globals.css";
 
 const serif = Playfair_Display({
@@ -15,7 +20,8 @@ const sans = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Alpha Design — Interior Architecture & Design",
+  title:
+    "Alpha Design — Interior Architecture & Design",
   description:
     "Alpha Design is an interior architecture and design studio crafting timeless residential and commercial spaces.",
 };
@@ -26,8 +32,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${serif.variable} ${sans.variable}`}>
-      <body className="font-sans antialiased">{children}</body>
+    <html
+      lang="en"
+      className={`${serif.variable} ${sans.variable}`}
+    >
+      <body className="font-sans antialiased">
+        {children}
+      </body>
     </html>
   );
 }
